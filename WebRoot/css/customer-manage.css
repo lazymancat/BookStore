@@ -1,0 +1,113 @@
+body{
+	text-align:center;
+	margin:0px;
+	background-image:url('../img/customer/bg_customer_manage.jpg');
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+#manageCuspanel{
+	width:96%; 
+	min-height: 92%; 
+	margin: 2%; 
+	text-align:center; 
+	background:rgba(255, 255, 255, 0.65);
+	overflow:hidden;
+}
+
+#Custable{
+	width:90%; 
+	margin:20px auto auto auto; 
+	text-align:center; 
+	border-right:1px solid;
+	border-bottom:1px solid;
+}
+
+#Custable td{
+	padding:5px; 
+	border-left:1px solid;
+	border-top:1px solid;
+}
+
+#Custable a{
+	color:#FF0000;
+	text-decoration:none;
+}
+
+#Custable-thead{
+	background:rgba(152, 251, 152, 0.75);
+}
+
+#Custable-tfoot{
+	background:rgba(255, 170, 135, 0.75);
+}
+
+.Custable-trow{
+	background:rgba(255, 239, 213, 0.75);
+}
+
+.Custable-trow:hover{
+	background:rgba(255, 208, 165, 0.75);
+}
+
+.Custable-td-name{
+	width:20%;
+}
+.Custable-td-pwd{
+	width:20%;
+}
+.Custable-td-email{
+	width:35%;
+}
+.Custable-td-mobile{
+	width:15%;
+}
+.Custable-td-handle{
+	width:10%;
+}
+
+#fixeddiv-gotop{
+	padding:5px 2px; 
+	width:80px; 
+	height:auto; 
+	position: fixed; 
+	bottom:0px; 
+	right:0px; 
+	font-weight:700;
+	background:#FFDEAD;
+}
+
+#fixeddiv-gotop a{
+	display:block; 
+	color:#000000;
+	text-decoration: none;
+}
+
+#reviseCuspanel{
+	margin-top: 5%; 
+	width:30%; 
+	height:auto; 
+	box-shadow: 5px 5px 15px #000; 
+	background:rgba(255, 250, 205, 0.90);
+	overflow:hidden;
+}
+
+#reviseCuspanel:hover{
+	box-shadow: 15px 15px 20px #000; 
+}
+
+.btn-back{
+	line-height:50px; 
+	box-shadow: 5px 5px 10px #000; 
+	display:block; 
+	width:200px;  
+	height:50px; 
+	color:#000000;
+	background:#63B8FF; 
+	text-decoration:none;
+}
+
+.btn-back:hover{
+	box-shadow: 5px 5px 50px #63B8FF;
+	background:#00FFFF; 
+}

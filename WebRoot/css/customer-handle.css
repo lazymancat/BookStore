@@ -1,0 +1,120 @@
+body{
+	text-align:center;
+	margin:0px;
+	background-image:url('../img/customer/bg_customer_handle.jpg');
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+#revisepwdpanel{
+	margin-top: 5%; 
+	width:30%; 
+	height:auto; 
+	box-shadow: 5px 5px 15px #000; 
+	background:rgba(255, 250, 205, 0.90);
+	overflow:hidden;
+}
+
+#revisepwdpanel:hover{
+	box-shadow: 15px 15px 20px #000; 
+}
+
+#revisedatapanel{
+	margin-top: 5%; 
+	width:30%; 
+	height:auto; 
+	box-shadow: 5px 5px 15px #000; 
+	background:rgba(255, 250, 205, 0.90);
+	overflow:hidden;
+}
+
+#revisedatapanel:hover{
+	box-shadow: 15px 15px 20px #000; 
+}
+
+#manageCApanel{
+	width:96%; 
+	height: 92%; 
+	margin: 2%; 
+	text-align:center; 
+	background:rgba(255, 255, 255, 0.75);
+	overflow:hidden;
+}
+
+#CAtable{
+	width:90%; 
+	margin:20px auto auto auto; 
+	text-align:center; 
+	border-right:1px solid;
+	border-bottom:1px solid;
+}
+
+#CAtable td{
+	width:20%; 
+	padding:5px; 
+	border-left:1px solid;
+	border-top:1px solid;
+}
+
+#CAtable a{
+	color:#FF0000;
+	text-decoration:none;
+}
+
+#CAtable-thead{
+	background:rgba(152, 251, 152, 0.75);
+}
+
+#CAtable-tfoot{
+	background:rgba(255, 170, 135, 0.75);
+}
+
+.CAtable-trow{
+	background:rgba(255, 239, 213, 0.75);
+}
+
+.CAtable-trow:hover{
+	background:rgba(255, 208, 165, 0.75);
+}
+
+#addCApanel{
+	margin-top: 3%; 
+	width:30%; 
+	height:auto; 
+	box-shadow: 5px 5px 15px #000; 
+	background:rgba(255, 250, 205, 0.90);
+	overflow:hidden;
+}
+
+#addCApanel:hover{
+	box-shadow: 15px 15px 20px #000; 
+}
+
+#reviseCApanel{
+	margin-top: 3%; 
+	width:30%; 
+	height:auto; 
+	box-shadow: 5px 5px 15px #000; 
+	background:rgba(255, 250, 205, 0.90);
+	overflow:hidden;
+}
+
+#reviseCApanel:hover{
+	box-shadow: 15px 15px 20px #000; 
+}
+
+.btn-back{
+	line-height:50px; 
+	box-shadow: 5px 5px 10px #000; 
+	display:block; 
+	width:200px;  
+	height:50px; 
+	color:#000000;
+	background:#63B8FF; 
+	text-decoration:none;
+}
+
+.btn-back:hover{
+	box-shadow: 5px 5px 50px #63B8FF;
+	background:#00FFFF; 
+}

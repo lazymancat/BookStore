@@ -1,0 +1,30 @@
+.title{
+	font-size: 22px;
+    font-family: 黑体;
+    font-weight: bold;
+    text-align: center;
+    width: 200;
+    color: #0033cc;
+}
+
+.fontStyle{
+	line-height: 22px;
+    font-size: 18px;
+    color: #339966;
+    width: 100px;
+    font-weight: bold;
+}
+
+.errorMessage{
+	color:red;
+	list-style-type:none;
+	display:inline-block;
+	padding:0;
+	margin:0;
+}
+
+
+td{
+
+	border: solid 2px #fff;
+}

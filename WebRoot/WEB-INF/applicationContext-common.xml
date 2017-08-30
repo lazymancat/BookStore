@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+    
+    <!-- 启用注解 -->
+    <context:annotation-config />
+
+	<!-- 普通JDBC连接，取代 hiberbnate.cfg.xml -->
+	<bean id="candy" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver">
+		</property>
+		<property name="url"
+			value="jdbc:sqlserver://localhost:1433;DatabaseName=BookStoreDB">
+		</property>
+		<property name="username" value="sa"></property>
+		<property name="password" value="zhbit"></property>
+	</bean>
+
+	<!-- 创建SessionFactory，取代HiberbnateSessionFactory.java -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- 设置注入 -->
+		<property name="dataSource">
+			<ref bean="candy" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect"> <!-- 数据库方言 -->
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+				<prop key="hibernate.jdbc.use_scrollable_resultset">false</prop>
+			</props>
+		</property>
+		<!-- 说明持久化类映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<value>com/ssh/model/Book.hbm.xml</value>
+				<value>com/ssh/model/BookComment.hbm.xml</value>
+				<value>com/ssh/model/BookType.hbm.xml</value>
+				<value>com/ssh/model/Customer.hbm.xml</value>
+				<value>com/ssh/model/ConsignmentAddress.hbm.xml</value>
+				<value>com/ssh/model/Administrator.hbm.xml</value>
+				<value>com/ssh/model/OrderItems.hbm.xml</value>
+				<value>com/ssh/model/Orders.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+</beans>
+

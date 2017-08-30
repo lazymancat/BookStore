@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    
+	<!-- 得到UsersDao对象 -->
+	
+	<bean id="bookDao" class="com.ssh.dao.BookDao">
+		<!-- 使用setter来注入sessionFactory属性 -->
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="bookTypeDao" class="com.ssh.dao.BookTypeDao">
+		<!-- 使用setter来注入sessionFactory属性 -->
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+		
+
+	<!-- 得到LJM的UsersDao对象 -->
+	<bean id="bookCommentDao" class="com.ssh.dao.BookCommentDao">
+		<!-- 使用setter来注入sessionFactory属性 -->
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="customerDao" class="com.ssh.dao.CustomerDao">
+		<!-- 使用setter来注入sessionFactory属性 -->
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="consignmentAddressDao" class="com.ssh.dao.ConsignmentAddressDao">
+		<!-- 使用setter来注入sessionFactory属性 -->
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="administratorDao" class="com.ssh.dao.AdministratorDao">
+		<!-- 使用setter来注入sessionFactory属性 -->
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	
+	
+	
+	<!--WCH 使用者：
+		orderItemVDao
+		orderDao
+	-->
+	<bean id="shoppingBookDao" class="com.ssh.dao.BookDao">
+		<!--使用setter来注入sessionFactory属性-->
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<!--WCH 使用者：
+		addShoppingAction
+		showShoppingAction
+	-->
+	<bean id="orderItemVDao" class="com.ssh.dao.OrderItemVDao">
+		<!--使用setter来注入sessionFactory属性-->
+		<property name="bd">
+			<ref bean="shoppingBookDao"/>
+		</property>
+	</bean>
+	<!--WCH 使用者：
+		bookStatisticsAction
+		 orderDao
+	-->
+	<bean id="orderItemsDao" class="com.ssh.dao.OrderItemsDao">
+		<!--使用setter来注入sessionFactory属性-->
+		<property name="bookDao">
+			<ref bean="shoppingBookDao"/>
+		</property>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<!--WCH 使用者：
+		orderAction
+		orderListAction
+		orderManageAction
+		showShoppingAction
+	-->
+	<bean id="orderDao" class="com.ssh.dao.OrderDao">
+		<!--使用setter来注入sessionFactory属性-->
+		<property name="bookDao">
+			<ref bean="shoppingBookDao"/>
+		</property>
+		<property name="orderItemsDao">
+			<ref bean="orderItemsDao"/>
+		</property>
+		<property name="consignmentAddressDao">
+			<ref bean="consignmentAddressDao"/>
+		</property>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+</beans>

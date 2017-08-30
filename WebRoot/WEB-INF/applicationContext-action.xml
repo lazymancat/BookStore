@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- 得到LoginAction的对象 -->
+	<bean id="newBookAction" class="com.ssh.actions.NewBookAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="randomBookAction" class="com.ssh.actions.RandomBookAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="queryBookById" class="com.ssh.actions.QueryBookById" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="deleteBookById" class="com.ssh.actions.DeleteBookById" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="reviseBookAction" class="com.ssh.actions.ReviseBookAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="manageBookAction" class="com.ssh.actions.ManageBookAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="newProductAction" class="com.ssh.actions.NewProductAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="cheapBookAction" class="com.ssh.actions.CheapBookAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="getAllBookTypeAction" class="com.ssh.actions.GetAllBookTypeAction" scope="prototype">
+		<property name="btd">
+			<ref bean="bookTypeDao" />
+		</property>
+	</bean>
+	
+	<bean id="addBookTypeAction" class="com.ssh.actions.AddBookTypeAction" scope="prototype">
+		<property name="btd">
+			<ref bean="bookTypeDao" />
+		</property>
+	</bean>
+	
+	<bean id="deleteBookTypeAction" class="com.ssh.actions.DeleteBookTypeAction" scope="prototype">
+		<property name="btd">
+			<ref bean="bookTypeDao" />
+		</property>
+	</bean>
+	
+	<bean id="reviseBookTypeAction" class="com.ssh.actions.ReviseBookTypeAction" scope="prototype">
+		<property name="btd">
+			<ref bean="bookTypeDao" />
+		</property>
+	</bean>
+	
+	<bean id="addNewBookAction" class="com.ssh.actions.AddNewBookAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	<bean id="homePageSearchAction" class="com.ssh.actions.HomePageSearchAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<bean id="jumpToBookInfoAction" class="com.ssh.actions.JumpToBookInfoAction" scope="prototype">
+		<property name="bd">
+			<ref bean="bookDao" />
+		</property>
+		<property name="bcd">
+			<ref bean="bookCommentDao" />
+		</property>
+	</bean>
+	
+	<bean id="jumpToLoginAction" class="com.ssh.actions.JumpToLoginAction" scope="prototype">
+	</bean>
+	
+	<bean id="jumpToLogoffAction" class="com.ssh.actions.JumpToLogoffAction" scope="prototype">
+	</bean>
+	
+	<bean id="jumpToRegisterAction" class="com.ssh.actions.JumpToRegisterAction" scope="prototype">
+	</bean>
+	
+	<bean id="jumpToReviseDataAction" class="com.ssh.actions.JumpToReviseDataAction" scope="prototype">
+	</bean>
+	
+	<bean id="jumpToRevisePasswordAction" class="com.ssh.actions.JumpToRevisePasswordAction" scope="prototype">
+	</bean>
+	
+	<bean id="jumpToManageConsignmentAddressAction" class="com.ssh.actions.JumpToManageConsignmentAddressAction" scope="prototype">
+		<property name="cad">
+			<ref bean="consignmentAddressDao"/>
+		</property>
+	</bean>
+	
+	<bean id="jumpToReviseConsignmentAddressAction" class="com.ssh.actions.JumpToReviseConsignmentAddressAction" scope="prototype">
+		<property name="cad">
+			<ref bean="consignmentAddressDao"/>
+		</property>
+	</bean>
+	
+	<bean id="jumpToAddConsignmentAddressAction" class="com.ssh.actions.JumpToAddConsignmentAddressAction" scope="prototype">
+	</bean>
+	
+	<bean id="jumpToDeleteConsignmentAddressAction" class="com.ssh.actions.JumpToDeleteConsignmentAddressAction" scope="prototype">
+		<property name="cad">
+			<ref bean="consignmentAddressDao"/>
+		</property>
+	</bean>
+	
+	<bean id="jumpToManageCustomerAction" class="com.ssh.actions.JumpToManageCustomerAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="jumpToDeleteCustomerAction" class="com.ssh.actions.JumpToDeleteCustomerAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="jumpToReviseCustomerAction" class="com.ssh.actions.JumpToReviseCustomerAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="jumpToAdministratorLogoffAction" class="com.ssh.actions.JumpToAdministratorLogoffAction" scope="prototype">
+	</bean>
+	
+	<bean id="loginAction" class="com.ssh.actions.LoginAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+
+	<bean id="registerAction" class="com.ssh.actions.RegisterAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="reviseDataAction" class="com.ssh.actions.ReviseDataAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="revisePasswordAction" class="com.ssh.actions.RevisePasswordAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="reviseConsignmentAddressAction" class="com.ssh.actions.ReviseConsignmentAddressAction" scope="prototype">
+		<property name="cad">
+			<ref bean="consignmentAddressDao"/>
+		</property>
+	</bean>
+
+	<bean id="addConsignmentAddressAction" class="com.ssh.actions.AddConsignmentAddressAction" scope="prototype">
+		<property name="cad">
+			<ref bean="consignmentAddressDao"/>
+		</property>
+	</bean>
+	
+	<bean id="administratorLoginAction" class="com.ssh.actions.AdministratorLoginAction" scope="prototype">
+		<property name="add">
+			<ref bean="administratorDao"/>
+		</property>
+	</bean>
+	
+	<bean id="reviseCustomerAction" class="com.ssh.actions.ReviseCustomerAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--WCH-加入购物车-->
+	<bean id="addShoppingAction" class="com.ssh.actions.AddShoppingAction" >
+		<property name="oivd">
+			<ref bean="orderItemVDao" />
+		</property>
+	</bean>
+	<!--WCH-查看购物车-->
+	<bean id="showShoppingAction" class="com.ssh.actions.ShowShoppingAction" >
+		<property name="consignmentAddressDao">
+			<ref bean="consignmentAddressDao" />
+		</property>
+		<property name="oivd">
+			<ref bean="orderItemVDao" />
+		</property>
+		<property name="orderDao">
+			<ref bean="orderDao" />
+		</property>
+	</bean>
+	<!--WCH-更改购物车-->
+	<bean id="changeShoppingAction" class="com.ssh.actions.ChangeShoppingAction" >
+		<property name="consignmentAddressDao">
+			<ref bean="consignmentAddressDao" />
+		</property>
+		<property name="oivd">
+			<ref bean="orderItemVDao" />
+		</property>
+		<property name="orderDao">
+			<ref bean="orderDao" />
+		</property>
+	</bean>
+	<!--WCH下订单-->
+	<bean id="orderAction" class="com.ssh.actions.OrderAction" >
+		<property name="orderDao">
+			<ref bean="orderDao" />
+		</property>
+	</bean>
+	<!--订单列表 -->
+	<bean id="orderListAction" class="com.ssh.actions.OrderListAction" >
+		<property name="orderDao">
+			<ref bean="orderDao" />
+		</property>
+	</bean>
+	<!--更改订单列表 -->
+	<bean id="changeOrderList" class="com.ssh.actions.ChangeOrderList" >
+		<property name="orderDao">
+			<ref bean="orderDao" />
+		</property>
+	</bean>
+	<!--订单管理 -->
+	<bean id="orderManageAction" class="com.ssh.actions.OrderManageAction" >
+		<property name="orderDao">
+			<ref bean="orderDao" />
+		</property>
+	</bean>
+	<!--更改订单管理 -->
+	<bean id="changeOrderManageAction" class="com.ssh.actions.ChangeOrderManageAction" >
+		<property name="orderDao">
+			<ref bean="orderDao" />
+		</property>
+	</bean>
+	<!--订单统计 -->
+	<bean id="bookStatisticsAction" class="com.ssh.actions.BookStatisticsAction" >
+		<property name="orderItemsDao">
+			<ref bean="orderItemsDao" />
+		</property>
+	</bean>
+</beans>

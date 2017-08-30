@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+body{
+	background-attachment:fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;	
+	/*100% 100% fixed no-repeat;*/
+	background-image:url('./img/bg.jpg');
+	width: 100%;
+}
+.center{
+	margin: 0 10%;
+}
+.shopping{
+	margin: 0 auto;
+	border: 1px solid rgba(128,128,128, 1);
+	width:80%;
+	background-color: rgba(248,248,255, 0.6);
+}
+.shopping th{
+	border: 1px solid rgba(128,128,128, 1);
+}
+.shopping tr{
+	border: 1px solid rgba(128,128,128, 1);
+}
+.shopping td{
+	border: 1px solid rgba(128,128,128, 1);
+}
+.ERR{
+	color:#FF0000;
+}

@@ -1,0 +1,169 @@
+body{
+	background-color: #f4f4f4;
+}
+
+ul{
+	list-style: none;
+}
+
+li{
+    width: 19%;
+    float: left;
+    border-left: 5px solid #f4f4f4;
+    padding-bottom: 8px
+}
+
+a{
+	text-decoration: none;
+    display: block;
+    padding: 1.4em 9% 1.4em;
+    background: #fff;
+    color: #9b9b9b;
+    height: 10em;
+}
+
+.main_head{
+	height:128px; 
+	width:128px; 
+	margin :0 auto;
+	margin-top: 50px;
+}
+
+.main_list{
+	 width:1300px;
+	 height: 223px;
+	 margin :0 auto;
+	 margin-top: 50px;
+}
+
+.main_title{
+	width: 250px;
+	font-size: 50px;
+	color: #4d4d4d;
+	text-shadow: 2px 2px 5px;
+	margin: 0 auto;
+}
+
+.main_subhead{
+	width: 300px;
+	font-size: 20px;
+	color: #4d4d4d;
+	text-shadow: 2px 2px 5px;
+	margin: 0 auto;
+
+}
+
+.main_list_word{
+	display: block;
+	width: 65px;
+	margin: 0 auto;
+    font-family: "NovecentowideBookBold",Arial,sans-serif;
+    margin-bottom: 0.3em;
+    color: #4d4d4d;
+    font-size: 1.765em;
+    font-weight: normal;
+}
+
+.main_list_subword{
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+	color: #9c9c9c;
+}
+
+.main_list_img{
+	 width:100px; 
+	 height:100px;
+	 margin :0 auto; 
+}
+
+.main_userManage a:hover,.main_userManage a:hover strong,.main_userManage a:hover span{
+	 animation:userManageChange 0.2s ease-in-out forwards;
+}
+
+.main_bookManage a:hover,.main_bookManage a:hover strong,.main_bookManage a:hover span{
+	 animation:bookManageChange 0.2s ease-in-out forwards;
+}
+
+.main_typeManage a:hover,.main_typeManage a:hover strong,.main_typeManage a:hover span{
+	 animation:typeManageChange 0.2s ease-in-out forwards;
+}
+
+.main_shopManage a:hover,.main_shopManage a:hover strong,.main_shopManage a:hover span{
+	 animation:shopManageChange 0.2s ease-in-out forwards;
+}
+
+.main_countManage a:hover,.main_countManage a:hover strong,.main_countManage a:hover span{
+	 animation:countManageChange 0.2s ease-in-out forwards;
+}
+
+.btn-back{
+	line-height:50px; 
+	box-shadow: 5px 5px 10px #000; 
+	display:block; 
+	width:200px;  
+	height:50px; 
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto; 
+	padding:0px;
+	color:#000000;
+	background:#63B8FF;
+	text-decoration:none;
+	text-align:center;
+}
+
+.btn-back:hover{
+	box-shadow: 5px 5px 50px #63B8FF;
+	background:#00FFFF; 
+}
+
+@keyframes userManageChange{
+	0%{
+		background-color: #ffffff;
+	}
+	100%{
+		background: #65c0d1;
+		color: #ffffff;
+	}
+}
+
+@keyframes bookManageChange{
+	0%{
+		background-color: #ffffff;
+	}
+	100%{
+		background: #6dce9a;
+		color: #ffffff;
+	}
+}
+
+@keyframes typeManageChange{
+	0%{
+		background-color: #ffffff;
+	}
+	100%{
+		background: #f7af2b;
+		color: #ffffff;
+	}
+}
+
+@keyframes shopManageChange{
+	0%{
+		background-color: #ffffff;
+	}
+	100%{
+		background: #c27dae;
+		color: #ffffff;
+	}
+}
+
+@keyframes countManageChange{
+	0%{
+		background-color: #ffffff;
+	}
+	100%{
+		background: #e4444a;
+		color: #ffffff;
+	}
+}

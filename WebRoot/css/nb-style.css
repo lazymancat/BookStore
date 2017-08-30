@@ -1,0 +1,196 @@
+#reducebtn, #addbtn{
+	width:30px; 
+	height:20px; 
+	display:inline;
+}
+
+#number{
+	width:60px; 
+	height:20px; 
+	resize:none; 
+	display:inline; 
+	text-align:center;
+}
+
+.book-list{
+	width: 100%;
+}
+
+.back-img{
+	withe:88px;
+	height:61px;
+	display:inline-block;
+	position:absolute;
+}
+
+.buttom-list{
+	position:fixed;
+	width:1300px;
+}
+
+.left-button{
+	display: inline-block;
+	position: absolute;
+	width: 35px;
+	height: 38px;
+	border-color: #adb1b8 #a2a6ac #8d9096;
+    border-style: solid;
+    border-width: 1px;
+	border-radius: 3px;
+	background-color: #e7e9ec;
+	margin-left: 10px;
+}
+
+.left-button:hover{
+	background-color: #DDD;
+}
+
+/*.left-icon{
+	display: inline-block;
+	height: 100%;
+	background-color: red;
+	font-size: 40px;
+}*/
+
+.right-button{
+	display: inline-block;
+	position: relative;
+	width: 35px;
+	height: 38px;
+	border-color: #adb1b8 #a2a6ac #8d9096;
+    border-style: solid;
+    border-width: 1px;
+	border-radius: 3px;
+	background-color: #e7e9ec;
+	float: right;
+	margin-right: 10px;
+}
+
+.right-button:hover{
+	background-color: #DDD;
+}
+
+.all-book{
+	list-style-type:none;
+	position: absolute;
+	display: block;
+	margin-left: 150px;
+	padding: 0;
+	text-decoration: none;
+	width: 1000px;
+	height: 100%;
+}
+
+.book-decorate{
+	display:inline-block;
+	margin-top: 37px;
+	margin-left: 20px;
+	height: 230px;
+	width: 998px;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.book-title-decorate{
+	position: relative;
+	color: #459cd9;
+	font-size: 15px;
+	height:150px;
+    width: 300px;
+    max-height: 40px;
+    overflow: hidden;
+    white-space: normal;
+    text-align: left;
+}
+
+.book-title-decorate:hover{
+	color:#f1a041;
+}
+
+.book-introduction{
+	position: absolute;
+	display: inline-block;
+    margin-left: 250px;
+    margin-top: 30px;
+	text-decoration:none;
+}
+
+.book-img-decorate{
+	position: absolute;
+	display: inline-block;
+	text-align: center;
+	height: 110px;
+	width: 150px;
+}
+
+.book-price-decorate{
+	text-align: center;
+	color: #B12704;
+    text-align: left;
+    width: 400px;
+    font-size: 15px;
+}
+
+.book-author-decorate{
+	text-align: center;
+	color: #686d7a;
+    text-align: left;
+    width: 400px;
+    font-size: 15px;
+}
+
+.book-publisher-decorate{
+	text-align: center;
+	color: #686d7a;
+    text-align: left;
+    width: 400px;
+    font-size: 15px;
+
+}
+
+.book-shop{
+	position: relative;
+	display: inline-block;
+	float:right;
+	width:300px;
+	margin-top:50px;
+	
+}
+
+.icon-arrow-left2:before {
+	margin-left: 7px;
+	line-height: 38px;
+	content: "\ea40";
+}
+
+.icon-arrow-right2:before {
+	margin-left: 7px;
+	line-height: 38px;
+	content: "\ea3c";
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?4sqj0m');
+  src:  url('../fonts/icomoon.eot?4sqj0m#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?4sqj0m') format('truetype'),
+    url('../fonts/icomoon.woff?4sqj0m') format('woff'),
+    url('../fonts/icomoon.svg?4sqj0m#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

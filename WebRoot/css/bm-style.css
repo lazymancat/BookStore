@@ -1,0 +1,79 @@
+.bookManagement{
+	width:1300px; 
+	height:100%;
+	margin :0 auto;
+}
+
+.bookManagement_backImg{
+	position: absolute;
+	width: 78px;
+	height: 86px;
+	margin-left: 200px;
+	margin-top: 100px;
+	cursor: pointer;
+}
+
+.bookManagement_headImg{
+	display:inline-block;
+	position:relative;
+	width: 128px;
+	height: 128px;
+	margin-left:586px;
+	margin-top: 50px;
+}
+
+.bookManagement_addNewBookImg{
+	display:inline-block;
+	position:absolute;
+	width: 108px;
+	height: 128px;
+	margin-top: 120px;
+	margin-left:430px;
+}
+
+.bookManagement_addNewBookImg span{
+	color:#aaa;
+	margin-left:14px;
+	font-size:20px;
+}
+
+.bookManagement_headTitle{
+	height: 45px;
+	width: 194px;
+	margin: 0 auto;
+	color: #4d4d4d;
+	font-size: 40px;
+}
+
+.bookManagement_headSerach{
+	height: 25px;
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 20px;
+	border: 1px solid #a1a1a1;
+	border-radius: 5px;
+}
+
+.bookManagement_headSerach > input{
+	height: 23px;
+	width: 373px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+.bookManagement_headSerach > .glyphicon-search{
+	color:#ffab3f;
+	font-size: 15px;
+	border: none;
+	outline: none;
+}
+
+.bookManagement_bookList{
+	margin-top: 50px;
+}
+
+.bookManagement_bookList  th,.bookManagement_bookList td{
+	width: 14%;
+	text-align: center;
+}

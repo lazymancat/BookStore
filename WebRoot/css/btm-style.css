@@ -1,0 +1,112 @@
+ .errorMessage{
+ 	color:red;
+	list-style-type:none;
+ }
+
+.bookTypeManagement{
+	width:1300px; 
+	height:100%;
+	margin :0 auto;
+}
+
+.bookTypeManagement_backImg{
+	position: absolute;
+	width: 78px;
+	height: 86px;
+	margin-left: 300px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.bookTypeManagement_headImg{
+	width: 88px;
+	height: 128px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.bookTypeManagement_headTitle{
+	height: 45px;
+	width: 194px;
+	margin: 0 auto;
+	color: #4d4d4d;
+	font-size: 40px;
+}
+
+.bookTypeManagement_add{
+	width: 800px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.bookTypeManagement_add_title{
+	font-size: 25px;
+	color: #8dc2eb;
+	border-bottom: 1px solid #bfbfbf;
+}
+
+.bookTypeManagement_add_content{
+	margin-top: 10px;
+}
+
+.bookTypeManagement_add_content input{
+	outline: none;
+	margin-left: 10px;
+}
+
+.bookTypeManagement_delete{
+	width: 800px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.bookTypeManagement_delete_title{
+	font-size: 25px;
+	color: #8dc2eb;
+	border-bottom: 1px solid #bfbfbf;
+}
+
+.bookTypeManagement_delete_content{
+	margin-top: 10px;
+}
+
+.bookTypeManagement_delete_content select{
+	height: 22px;
+	width: 168px;
+	margin-left: 10px;
+	margin-top: 5px;
+	outline: none;
+}
+
+.bookTypeManagement_change{
+	width: 800px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.bookTypeManagement_change_title{
+	font-size: 25px;
+	color: #8dc2eb;
+	border-bottom: 1px solid #bfbfbf;
+}
+
+.bookTypeManagement_change_content{
+	margin-top: 10px;
+}
+
+.bookTypeManagement_change_content select{
+	height: 22px;
+	width: 168px;
+	margin-left: 10px;
+	margin-top: 5px;
+	outline: none;
+}
+
+.bookTypeManagement_change_img{
+	position: absolute;
+	height:30px;
+	width:60px;
+	margin-left: 10px;
+}

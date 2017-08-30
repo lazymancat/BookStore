@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ssh.model.Customer" table="Customer">
+		<!-- 配置主键 -->
+		<id name="id" column="id">
+			<generator class="native" /> <!-- 配置的是自动增长标识列 -->
+		</id>
+		<property name="regName"/>
+		<property name="mobile" />
+		<property name="email"/>
+		<property name="password"/>
+		<property name="flag"/>
+	</class>
+</hibernate-mapping>
+

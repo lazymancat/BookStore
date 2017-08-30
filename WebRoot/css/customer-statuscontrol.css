@@ -1,0 +1,105 @@
+body{
+	text-align:center;
+	margin:0px auto;
+	background-image:url('../img/customer/bg_customer_statuscontrol.jpg');
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+#loginpanel{
+	margin-top: 5%; 
+	width:30%; 
+	height:auto; 
+	box-shadow: 10px 10px 20px #FFDAB9; 
+	background:rgba(255, 250, 205, 0.50);
+	overflow:hidden;
+}
+
+#loginpanel:hover{
+	box-shadow: 5px 5px 15px #FFDAB9; 
+}
+
+
+#loginsuccesspanel{
+	margin-top: 5%; 
+	width:50%; 
+	height:auto; 
+	box-shadow: 10px 10px 20px #FFDAB9; 
+	background:rgba(255, 250, 205, 0.50);
+	overflow:hidden;
+}
+
+#loginsuccesspanel:hover{
+	box-shadow: 5px 5px 15px #FFDAB9; 
+}
+
+#loginsuccess{
+	font-family:;
+	font-size:24px;
+}
+
+#registerpanel{
+	margin-top: 2%; 
+	width:30%; 
+	height:auto; 
+	box-shadow: 10px 10px 20px #FFDAB9; 
+	background:rgba(255, 250, 205, 0.50);
+	overflow:hidden;
+}
+
+#registerpanel:hover{
+	box-shadow: 5px 5px 15px #FFDAB9; 
+}
+
+
+#registersuccesspanel{
+	margin-top: 5%; 
+	width:50%; 
+	height:auto; 
+	box-shadow: 10px 10px 20px #FFDAB9; 
+	background:rgba(255, 250, 205, 0.50);
+	overflow:hidden;
+}
+
+#registersuccesspanel:hover{
+	box-shadow: 5px 5px 15px #FFDAB9; 
+}
+
+#registersuccess{
+	font-family:;
+	font-size:24px;
+}
+
+#logoffsuccesspanel{
+	margin-top: 5%; 
+	width:50%; 
+	height:30%; 
+	box-shadow: 10px 10px 20px #FFDAB9; 
+	background:rgba(255, 250, 205, 0.50);
+	overflow:hidden;
+}
+
+#logoffsuccesspanel:hover{
+	box-shadow: 5px 5px 15px #FFDAB9; 
+}
+
+#logoffsuccess{
+	font-family:;
+	font-size:24px;
+}
+
+.btn-back{
+	line-height:50px; 
+	box-shadow: 5px 5px 10px #000; 
+	display:block; 
+	width:200px; 
+	height:50px; 
+	color:#000000;
+	background:#63B8FF; 
+	text-decoration:none;
+}
+
+.btn-back:hover{
+	box-shadow: 5px 5px 50px #63B8FF;
+	background:#00FFFF; 
+}

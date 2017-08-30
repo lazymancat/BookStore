@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+
+	<!-- 指定action的配置转到Spring的配置文件-->
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	
+	<package name="BookStore" extends="struts-default"> 
+		<interceptors>
+			<interceptor name="CustomerLoginInterceptor" class="com.ssh.interceptor.CustomerLoginInterceptor"/>
+			<interceptor name="AdminLoginInterceptor" class="com.ssh.interceptor.AdminLoginInterceptor"/>
+		</interceptors>
+		
+	
+		<action name="newBook" class="newBookAction" >
+			<result name="success">/NewBook.jsp</result>
+			<result name="input">/BookTypeFalse.jsp</result>
+		</action>
+	
+		<action name="randomBook" class="randomBookAction" >
+			<result name="success">/HomePage.jsp</result>
+		</action>
+	
+		<action name="queryBook" class="queryBookById" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success">/BookRevise.jsp</result>
+			<result name="input">/BookManagement.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+	
+		<action name="deleteBook" class="deleteBookById" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="login" type="redirectAction">
+				<param name="actionName">manageBook</param>
+			</result>
+			
+			<result name="success">/BookManagement.jsp</result>
+			<result name="input">/BookManagement.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+	
+		<action name="reviseBook" class="reviseBookAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			
+			<result name="login" type="redirectAction">
+				<param name="actionName">manageBook</param>
+			</result>
+			
+			<result name="success">/BookManagement.jsp</result>
+			<result name="input">/BookRevise.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		<action name="addNewBook" class="addNewBookAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="login" type="redirectAction">
+				<param name="actionName">manageBook</param>
+			</result>
+			
+			<result name="success">/BookManagement.jsp</result>
+			<result name="input">/AddNewBook.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+	
+		<action name="getAllBookType" class="getAllBookTypeAction" >
+			<result name="success">/BookRevise.jsp</result>
+			<result name="input">/BookTypeManagement.jsp</result>
+		</action>
+	
+		<action name="manageBook" class="manageBookAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success">/BookManagement.jsp</result>
+			<result name="login" type="redirectAction">
+				<param name="actionName">manageBook</param>
+			</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+	
+		<action name="newProduct" class="newProductAction" >
+			<result name="success">/HomePage.jsp</result>
+		</action>
+	
+		<action name="cheapBook" class="cheapBookAction" >
+			<result name="success">/HomePage.jsp</result>
+		</action>
+		
+		<action name="addBookType" class="addBookTypeAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success">/BookTypeManagement.jsp</result>
+			<result name="input">/BookTypeManagement.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		<action name="deleteBookType" class="deleteBookTypeAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success">/BookTypeManagement.jsp</result>
+			<result name="input">/False.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		<action name="reviseBookType" class="reviseBookTypeAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success">/BookTypeManagement.jsp</result>
+			<result name="input">/BookTypeManagement.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		<action name="homePageSearch" class="homePageSearchAction" >
+			<result name="success">/SearchBook.jsp</result>
+			<result name="input">/HomePage.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		<!-- 跳转至图书详情页面 -->
+		<action name="jumpToBookInfo" class="jumpToBookInfoAction" >			
+			<result name="success">/BookInfo.jsp</result>
+		</action>
+		<!-- 跳转至登录页面-->
+		<action name="jumpToLogin" class="jumpToLoginAction" >
+			<result name="success">/Login.jsp</result>
+		</action>
+		<!-- 登录数据处理 -->
+		<action name="login" class="loginAction" >			
+			<result name="success">/LoginSuccess.jsp</result>
+			<result name="input">/Login.jsp</result>
+		</action>
+		<!-- 跳转至图书详情处理 -->
+		<action name="jumpToLogoff" class="jumpToLogoffAction" >		
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+			
+			<result name="success">/LogoffSuccess.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="jumpToRegister" class="jumpToRegisterAction" >			
+			<result name="success">/Register.jsp</result>
+		</action>
+		
+		<action name="register" class="registerAction" >			
+			<result name="success">/RegisterSuccess.jsp</result>
+			<result name="input">/Register.jsp</result>
+		</action>
+		
+		<action name="jumpToReviseData" class="jumpToReviseDataAction" >
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+							
+			<result name="success">/ReviseData.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+
+		<action name="reviseData" class="reviseDataAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+					
+			<result name="success">/ReviseData.jsp</result>
+			<result name="input">/ReviseData.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="jumpToRevisePassword" class="jumpToRevisePasswordAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+								
+			<result name="success">/RevisePassword.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="revisePassword" class="revisePasswordAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+								
+			<result name="success">/RevisePassword.jsp</result>
+			<result name="input">/RevisePassword.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="jumpToManageConsignmentAddress" class="jumpToManageConsignmentAddressAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+								
+			<result name="success">/ManageConsignmentAddress.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="jumpToReviseConsignmentAddress" class="jumpToReviseConsignmentAddressAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+								
+			<result name="success">/ReviseConsignmentAddress.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="reviseConsignmentAddress" class="reviseConsignmentAddressAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+								
+			<result name="success">/ReviseConsignmentAddress.jsp</result>
+			<result name="input">/ReviseConsignmentAddress.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="jumpToDeleteConsignmentAddress" class="jumpToDeleteConsignmentAddressAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+					
+			<result name="success">/DeleteConsignmentAddress.jsp</result>
+			<result name="input">/DeleteConsignmentAddress.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="jumpToAddConsignmentAddress" class="jumpToAddConsignmentAddressAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+								
+			<result name="success">/AddConsignmentAddress.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="addConsignmentAddress" class="addConsignmentAddressAction" >			
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+								
+			<result name="success">/AddConsignmentAddress.jsp</result>
+			<result name="input">/AddConsignmentAddress.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		
+		<action name="administratorLogin" class="administratorLoginAction" >			
+			<result name="success">/management_Main.jsp</result>
+			<result name="input">/management_Login.jsp</result>
+		</action>
+		
+		
+		<action name="jumpToManageCustomer" class="jumpToManageCustomerAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+					
+			<result name="success">/ManageCustomer.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		<action name="jumpToDeleteCustomer" class="jumpToDeleteCustomerAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+						
+			<result name="success">/DeleteCustomer.jsp</result>
+			<result name="input">/DeleteCustomer.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		<action name="jumpToReviseCustomer" class="jumpToReviseCustomerAction" >
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+						
+			<result name="success">/ReviseCustomer.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		<action name="reviseCustomer" class="reviseCustomerAction" >	
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+					
+			<result name="success">/ReviseCustomer.jsp</result>
+			<result name="input">/ReviseCustomer.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		<action name="jumpToAdministratorLogoff" class="jumpToAdministratorLogoffAction" >		
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success">/management_Login.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		
+		<!--WCH加入购物车  -->
+		<action name="AddShoppingAction" class="addShoppingAction"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+			
+			<result name="success">/Add_shopping_success.jsp</result>
+			<result name="input">/Error500.jsp</result><!--无效链接等价类  -->
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		<!--WCH查看购物车-->
+		<action name="ShowShoppingAction" class="showShoppingAction"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+			
+			<result name="success">/Shopping.jsp</result>
+			<result name="input">/Error500.jsp</result> <!--输入数据错误引导  -->
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		<!--WCH更改购物车-->
+		<action name="ChangeShoppingAction" class="changeShoppingAction"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+			
+			<result name="success" type="redirectAction">ShowShoppingAction</result>
+			<result name="input">/Error500.jsp</result> <!--输入数据错误引导  -->
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		<!--WCH下订单-->
+		<action name="OrderAction" class="orderAction"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+			
+			<result name="success">/Order_success.jsp</result>
+			<result name="input" type="redirectAction">ShowShoppingAction</result> <!--输入数据错误引导  -->
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		<!--WCHW我的订单  -->
+		<action name="OrderListAction" class="orderListAction"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+			
+			<result name="success">/Order_list.jsp</result>
+			<result name="input">/Error500.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		<!--WCHW更改我的订单  -->
+		<action name="ChangeOrderList" class="changeOrderList"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="CustomerLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>	
+			
+			<result name="success" type="redirectAction">OrderListAction</result>
+			<result name="input">/Error500.jsp</result>
+			<result name="unlogin">/unLogin.jsp</result>
+		</action>
+		<!--WCH 订单管理   -->
+		<action name="OrderManageAction" class="orderManageAction"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success">/Order_manage.jsp</result>
+			<result name="input">/Error500.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		<!--WCH 更改订单管理   -->
+		<action name="ChangeOrderManageAction" class="changeOrderManageAction"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success" type="redirectAction">OrderManageAction</result>
+			<result name="input">/Error500.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+		<!--WCH 订单统计   -->
+		<action name="BookStatisticsAction" class="bookStatisticsAction"> <!-- Action到Spring配置文件中查找 -->		
+			<interceptor-ref name="AdminLoginInterceptor"/>
+			<interceptor-ref name="defaultStack"/>
+			
+			<result name="success">/Book_statistics.jsp</result>
+			<result name="input">/Error500.jsp</result>
+			<result name="unlogin">/unLogin_Admin.jsp</result>
+		</action>
+	</package>
+</struts>

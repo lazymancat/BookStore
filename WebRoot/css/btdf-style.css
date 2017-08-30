@@ -1,0 +1,45 @@
+.webPagejump_title{
+	width: 235px;
+	margin:0 auto;
+	font-size: 40px;
+	z-index: 500;
+	color: #b63b54;
+}
+
+.webPagejump_img{
+	position: absolute;
+	height: 480px;
+	width: 400px;
+	margin: auto;
+	top: 0; left: -560px; bottom: 0; right: 0; 
+	z-index: 1; 
+}
+
+.webPagejump_border{
+	position: absolute;
+	height: 300px;
+	width: 500px;
+	border: 1px dashed #1487d1;
+	margin: auto;
+	top: -100px; left: 210px; bottom: 0; right: 0; 
+	z-index: 999; 
+}
+
+.webPagejump_border a{
+	text-decoration: none;
+}
+
+.webPagejump_border_title{
+	height: 20px;
+	width: 205px;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.webPagejump_border_subtitle{
+	height: 20px;
+	width: 225px;
+	margin: auto;
+	margin-top: 20px;
+	color: #248fd9;
+}

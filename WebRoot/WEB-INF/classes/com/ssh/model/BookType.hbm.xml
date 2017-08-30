@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ssh.model.BookType" table="BookType">
+		<!-- 配置主键 -->
+		<id name="typeId" column="typeId">
+			<generator class="native" /> <!-- 配置的是自动增长标识列 -->
+		</id>
+		<property name="typeName"/>
+		<property name="flag"/>
+	</class>
+</hibernate-mapping>

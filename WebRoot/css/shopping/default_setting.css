@@ -1,0 +1,47 @@
+/*
+*璁惧畾榛樿杈规
+*body鑳屾櫙
+*a鏍囩鍙栨秷涓嬪垝绾�*
+*/
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+body{
+	background-attachment:fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;	
+	/*100% 100% fixed no-repeat;*/
+	height: 100%;
+	width: 100%;
+}
+a:link{
+	text-decoration: none; 
+	color: #0000ff;
+}
+a:visited {
+	color: #0000ff;
+}
+h1{
+	font-style: normal;
+	text-align: center;
+	width: 100%;
+}
+
+.btn-back{
+	line-height:50px; 
+	box-shadow: 5px 5px 10px #000; 
+	display:block; 
+	width:200px; 
+	height:50px; 
+	color:#000000;
+	background:#63B8FF; 
+	text-decoration:none;
+}
+
+.btn-back:hover{
+	box-shadow: 5px 5px 50px #63B8FF;
+	background:#00FFFF; 
+}

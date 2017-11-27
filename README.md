@@ -1,2 +1,2 @@
 # BookStore
-java开发框架ssh练手
+基于SSH框架的网上书店系统
